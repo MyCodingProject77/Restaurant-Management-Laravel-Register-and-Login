@@ -1,0 +1,85 @@
+
+
+
+
+   1) first go to any drive and create a folder. Go inside the folder and right click and open with bash here
+
+
+   2) Bash - composer create-project laravel/laravel project name
+
+
+   3) Now go to inside the project and type cmd and code .
+
+ 
+   4) Open mysql workbench and CREATE DATABASE restaurantdb;
+
+
+      Update the .env file in laravel project
+
+   5) DB_CONNECTION=mysql
+      DB_HOST=127.0.0.1
+      DB_PORT=3306
+      DB_DATABASE=restaurantdb
+      DB_USERNAME=root
+      DB_PASSWORD=Vxymai54786666@
+
+
+
+   6) composer require laravel/breeze --dev
+
+   7) php artisan breeze:install                [Select blade for front end] and phpunit
+
+   8) npm install 
+
+   9) npm run dev
+
+
+
+   10) php artisan migrate
+
+
+   11) php artisan serve
+
+
+
+   12) Now create home.blade.php in resources/views/home.blade.php
+
+
+   13) Open the file App\Http\Controllers\Auth\AuthenticatedSessionController
+
+
+    public function store(Request $request): RedirectResponse
+{
+    $request->authenticate();
+
+    $request->session()->regenerate();
+
+    return redirect()->intended('/home'); // Redirect to home
+}
+
+
+
+
+
+    14) add a route for the homepage. Open routes/web.php and define a route for the home page
+
+
+      Route::get('/home', function () {
+    return view('home');
+})->middleware(['auth'])->name('home');
+
+
+
+
+  15) php artisan serve
+
+
+  
+
+  
+
+
+
+
+
+
